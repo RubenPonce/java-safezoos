@@ -14,7 +14,7 @@ public class Telephone
 
     private String phonetype;
     private String phonenumber;
-
+    //does lazy stuff
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "zooid")
     @JsonIgnoreProperties({"telephones", "hibernateLazyInitializer"})
