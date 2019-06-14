@@ -1,6 +1,6 @@
-package com.lambdaschool.authenticatedusers.repository;
+package com.lambdaschool.zoos.repository;
 
-        import com.lambdaschool.authenticatedusers.model.Role;
+        import com.lambdaschool.zoos.model.Role;
         import org.springframework.data.jpa.repository.Modifying;
         import org.springframework.data.jpa.repository.Query;
         import org.springframework.data.repository.CrudRepository;

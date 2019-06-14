@@ -1,4 +1,4 @@
-package com.lambdaschool.authenticatedusers.model;
+package com.lambdaschool.zoos.model;
 
 
 

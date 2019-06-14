@@ -1,4 +1,4 @@
-package com.lambdaschool.authenticatedusers.model;
+package com.lambdaschool.zoos.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -26,17 +26,17 @@ public class User extends Auditable
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    //One to many can cascade all to make cleaner
     @OneToMany(mappedBy = "user",
                cascade = CascadeType.ALL)
     @JsonIgnoreProperties("user")
     private List<UserRoles> userRoles = new ArrayList<>();
-
-    @OneToMany(mappedBy = "user",
-               cascade = CascadeType.ALL,
-               orphanRemoval = true)
-    @JsonIgnoreProperties("user")
-    private List<Quote> quotes = new ArrayList<>();
-
+//
+//    @OneToMany(mappedBy = "user",
+//               cascade = CascadeType.ALL,
+//               orphanRemoval = true)
+//    @JsonIgnoreProperties("user")
+//    private List<UserRoles> userRoles = new ArrayList<>();
     public User()
     {
     }
@@ -98,15 +98,6 @@ public class User extends Auditable
         this.userRoles = userRoles;
     }
 
-    public List<Quote> getQuotes()
-    {
-        return quotes;
-    }
-
-    public void setQuotes(List<Quote> quotes)
-    {
-        this.quotes = quotes;
-    }
 
     public List<SimpleGrantedAuthority> getAuthority()
     {
